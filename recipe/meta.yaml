@@ -1,5 +1,5 @@
 {% set name = "twisted-iocpsupport" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/twisted-iocpsupport-{{ version }}.tar.gz
-  sha256: bdda01692988f29d43d832a4b1f402199d0c7d80083ad65059a0892a3670fc9a
+  sha256: 72068b206ee809c9c596b57b5287259ea41ddb4774d86725b19f35bf56aa32a9
 
 build:
   number: 0
-  skip: True  # [not win]
-  skip: True  # [py<35]
+  skip: true  # [not win]
+  skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
