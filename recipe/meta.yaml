@@ -10,7 +10,7 @@ source:
   sha256: 858096c0d15e33f15ac157f455d8f86f2f2cdd223963e58c0f682a3af8362d89
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not win]
   skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . -vv
@@ -18,10 +18,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - pip
     - python
+    - setuptools
   run:
     - python
 
